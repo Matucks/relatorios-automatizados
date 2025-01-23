@@ -1,117 +1,111 @@
-Relatórios Automatizados
+# Relatórios Automatizados
 
-Este repositório contém um script Python desenvolvido para automatizar a geração de relatórios dinâmicos em planilhas Excel. Ele permite o processamento de dados de entrada, a criação de índices e tabelas organizadas, e o envio automatizado de e-mails com os arquivos gerados.
+Este repositório contém um script em Python criado para automatizar a geração de relatórios dinâmicos em planilhas Excel. O script processa dados de entrada, cria índices e tabelas organizadas e permite o envio automático de e-mails com os relatórios gerados.
 
-Funcionalidades
+---
 
-Processamento de Dados:
+## Funcionalidades
 
-Identifica automaticamente o arquivo mais recente na pasta de entrada.
+### 1. **Processamento de Dados**
+- Identifica automaticamente o arquivo mais recente na pasta de entrada.
+- Realiza validações para garantir a presença dos dados necessários.
+- Gera tabelas dinâmicas organizadas por categoria e modelo de produto.
 
-Realiza validações para garantir que os dados necessários estão presentes.
+### 2. **Geração de Relatórios**
+- Cria um arquivo Excel com múltiplas abas baseadas nos dados processados.
+- Inclui uma aba de índice com hiperlinks para navegação fácil entre as abas.
+- Aplica estilos personalizados e formatações visuais para melhorar a apresentação.
 
-Gera tabelas dinâmicas organizadas por categoria e modelo de produto.
+### 3. **Automatização de E-mail**
+- Integra-se a um servidor SMTP para envio automático de relatórios por e-mail.
+- Lista de destinatários configurável conforme necessidade.
 
-Geração de Relatórios:
+---
 
-Cria um arquivo Excel com múltiplas abas baseadas nos dados processados.
+## Configuração
 
-Inclui uma aba de índice com hiperlinks para facilitar a navegação.
+### 1. **Requisitos**
+- **Python 3.8 ou superior.**
 
-Aplica estilos personalizados e formatação visual para melhorar a apresentação.
+### 2. **Bibliotecas Necessárias**
+- `pandas`
+- `openpyxl`
+- `smtplib`
+- `email`
 
-Automação de E-mail:
-
-Integração com servidor SMTP para envio automático de relatórios por e-mail (lista de destinatários pode ser ajustada conforme necessidade).
-
-Configuração
-
-Requisitos
-
-Python 3.8 ou superior
-
-Bibliotecas Python:
-
-pandas
-
-openpyxl
-
-smtplib
-
-email
-
-Instalação
-
-Clone este repositório:
-
-git clone https://github.com/seu-usuario/relatorios-automatizados.git
-
-Navegue até o diretório do projeto:
-
-cd relatorios-automatizados
-
-Instale as dependências:
-
+Instale as dependências executando o comando abaixo:
+```bash
 pip install pandas openpyxl
+```
 
-Configuração de Caminhos
+### 3. **Configuração de Caminhos**
 
-No script, configure os caminhos das pastas de entrada e saída conforme sua estrutura local:
-
-pasta_entrada: Diretório onde os arquivos de entrada serão armazenados.
-
-caminho_saida: Local onde o arquivo Excel gerado será salvo.
+Configure os caminhos de entrada e saída no script conforme a estrutura local:
+- **Pasta de Entrada**: Diretório onde os arquivos de entrada serão armazenados.
+- **Caminho de Saída**: Local onde o arquivo Excel gerado será salvo.
 
 Exemplo:
-
+```python
 pasta_entrada = r"C:\Projeto\localizador\entrada"
 caminho_saida = r"C:\Projeto\localizador\saida\LOCALIZADOR_GM.xlsx"
+```
 
-Configuração do Servidor de E-mail
+### 4. **Configuração do Servidor de E-mail**
 
-Substitua as credenciais e configurações do servidor SMTP para sua conta de e-mail:
-
+Substitua as credenciais e as configurações do servidor SMTP no script para sua conta de e-mail:
+```python
 SMTP_SERVER = 'smtp.seuservidor.com'
 SMTP_PORT = 587
 EMAIL_USER = 'seu.email@seuservidor.com'
 EMAIL_PASS = 'sua_senha'
+```
 
-Como Usar
+---
 
-Certifique-se de que os arquivos de entrada estão na pasta configurada.
+## Como Usar
 
-Execute o script:
+1. Certifique-se de que os arquivos de entrada estejam na pasta configurada.
+2. Execute o script:
+   ```bash
+   python script.py
+   ```
+3. O relatório gerado será salvo no caminho configurado e, caso configurado, será enviado automaticamente por e-mail.
 
-python script.py
+---
 
-O relatório será gerado no caminho configurado e poderá ser enviado automaticamente por e-mail (se configurado).
+## Estrutura do Relatório
 
-Estrutura do Relatório
+### **Índice**
+- Aba inicial com hiperlinks para acessar abas específicas do arquivo.
+- Categorias organizadas para facilitar a navegação.
 
-Índice:
+### **Abas de Produto**
+- Tabelas dinâmicas organizadas por linha de produto, cor e status do veículo.
+- Dados sumarizados por categoria para análise detalhada.
 
-Hiperlinks para acessar abas específicas.
+---
 
-Categorias definidas para facilitar a organização.
+## Personalização
 
-Abas de Produto:
+- **Mapeamento de Categorias**: O dicionário `categorias` pode ser ajustado no script para incluir novas categorias ou modificar as existentes.
+- **Estilo Visual**: O script utiliza formatações padrão que podem ser personalizadas diretamente no código para atender às preferências visuais do usuário.
 
-Tabelas dinâmicas organizadas por linha de produto, cor e status do veículo.
+---
 
-Dados sumarizados por categoria.
+## Contribuições
 
-Personalização
+Contribuições são sempre bem-vindas! Caso encontre problemas ou tenha sugestões de melhorias, utilize a aba ["Issues"](https://github.com/seu-usuario/relatorios-automatizados/issues) ou envie um pull request.
 
-Mapeamento de Categorias: O dicionário categorias pode ser ajustado para incluir novas categorias ou modificar existentes.
+---
 
-Estilo Visual: O script utiliza formatações padrão que podem ser alteradas diretamente no código para refletir suas preferências visuais.
+## Licença
 
-Contribuição
+Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT). Consulte o arquivo `LICENSE` para mais informações.
 
-Contribuições são bem-vindas! Caso encontre problemas ou tenha sugestões de melhorias, abra uma issue ou envie um pull request.
+---
 
-Licença
+## Autor
 
-Este projeto está licenciado sob a Licença MIT. 
+- **Gabriel Matuck**  
+  - **E-mail**: [gabriel.matuck1@gmail.com](mailto:gabriel.matuck1@gmail.com)
 
-Consulte o arquivo LICENSE para mais informações.
